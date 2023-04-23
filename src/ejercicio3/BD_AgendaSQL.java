@@ -106,40 +106,7 @@ public class BD_AgendaSQL {
         }
     }
     
-    //////// PRUEBA A PEDIR SOLO ALGUNOS DATOS
-    public static ArrayList<Contacto> getListaNombreEmail(){
-        try {
-            ArrayList<Contacto> listaContactos=new ArrayList();
-            
-            Statement statement = conexion.createStatement();
-          
-            //ResultSet rs = statement.executeQuery("SELECT id, nombre, apellidos, email, DATE_FORMAT(fecha_nac,'%d/%m/%Y') as FechaNac FROM contactos");
-            ResultSet rs = statement.executeQuery("SELECT id, nombre, apellidos, email FROM contactos");
-           
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String nombre = rs.getString("nombre");
-                String apellidos = rs.getString("apellidos");
-                String email = rs.getString("email");
-               
-                listaContactos.add(new Contacto(id,nombre,apellidos,email));
-            }
-            rs.close();
-            statement.close();
-            return listaContactos;
-            
-        } catch (SQLException ex) {
-            System.out.println("ERROR: sql excepcion");
-            System.out.println(ex);
-            return null;
-        } catch(Exception ex){
-            System.out.println("ERROR: parse de fecha");
-            System.out.println(ex);
-            return null;
-        }    
-    
-    }
-    /////////  FIN PRUEBA
+   
     
     public static ArrayList<Contacto> getListaCompleta(){
         try {

@@ -29,20 +29,14 @@ public class Contacto {
     }
 
     public Contacto(String nombre, String apellidos, String email, LocalDate fecha_nac) {
-        this.id=id;
+        this.id = -1;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.email = email;
         this.fecha_nac = fecha_nac;
     }
 
-    public Contacto(int id, String nombre, String apellidos, String email) {
-        this.id=id;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.email = email;
-        this.fecha_nac = null;
-    }
+   
 
     
     
@@ -94,16 +88,10 @@ public class Contacto {
     public String toString(){
         DateTimeFormatter dtf=DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String cad;
-        if (this.fecha_nac!=null){
-            cad=String.format("%3d - %-10s %-15s %-20s %10s",id, nombre, apellidos,email,fecha_nac.format(dtf));
-        }
-        else{
-            //Imprimo el contacto sin la fecha de nacimiento
-            cad=String.format("%3d - %-10s %-15s %-20s ---------",id, nombre, apellidos,email);
-
-        }
         
-         return cad;
+        cad=String.format("%3d - %-10s %-15s %-20s %10s",id, nombre, apellidos,email,fecha_nac.format(dtf));
+       
+        return cad;
         
         
     }

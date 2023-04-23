@@ -80,8 +80,7 @@ public class Main {
                 System.out.println("2. Borrar Contacto");
                 System.out.println("3. Lista completa");
                 System.out.println("4. Filtrar por letra comienzo");
-                System.out.println("5. PRUEBA: listar nombre,apellidos y email");
-                System.out.println("6. Salir");
+                System.out.println("5. Salir");
                 
 
                 System.out.print("Escoge Opcion >");
@@ -133,22 +132,11 @@ public class Main {
                         }
                         filtrada=true;
                         break;
-                    
-                    //PROBAR A PEDIR OBJETOS INCOMPLETOS    
+                        
                     case 5:
-                        
-                        listaContactos=BD_AgendaSQL.getListaNombreEmail();
-                        if (listaContactos==null){
-                            System.out.println("ERROR al leer lista");
-                            listaContactos.clear();
-                        }
-                        filtrada=false;
-                        break;    
-                        
-                    case 6:
                         break;
                 }
-            } while (opcionElegida != 6);
+            } while (opcionElegida != 5);
         }
     }
     
